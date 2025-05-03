@@ -33,7 +33,7 @@ public class PrestamoController {
     }
 
     @GetMapping("/libro")
-    public Prestamo obtenerPrestamoPorPrestamo(@RequestBody Libro libro) {
+    public Prestamo obtenerPorLibro(@RequestBody Libro libro) {
         return prestamoService.buscarPorLibro(libro);
     }
 
