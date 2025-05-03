@@ -3,9 +3,11 @@ package com.app.tp4.repository;
 import com.app.tp4.model.Libro;
 import com.app.tp4.model.Prestamo;
 import com.app.tp4.model.Usuario;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository
 public class PrestamoRepositoryImpl implements PrestamoRepository {
     private final Map<Long, Prestamo> prestamos = new HashMap<>();
     private Long nextId = 1L;

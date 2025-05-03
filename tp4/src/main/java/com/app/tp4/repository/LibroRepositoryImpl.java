@@ -1,9 +1,11 @@
 package com.app.tp4.repository;
 
 import com.app.tp4.model.Libro;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository
 public class LibroRepositoryImpl implements LibroRepository {
     private final Map<Long, Libro> libros = new HashMap<Long, Libro>();
     private Long nextId = 1L;
