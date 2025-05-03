@@ -17,7 +17,7 @@ public class UsuarioController {
     }
 
     @GetMapping
-    public List<Usuario> obtenerLibros() {
+    public List<Usuario> obtenerUsuarios() {
         return usuarioService.buscarTodos();
     }
 
@@ -32,18 +32,18 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public Usuario crearLibro(@RequestBody Usuario libro){
+    public Usuario crearUsuario(@RequestBody Usuario libro){
         return usuarioService.save(libro);
     }
 
     @PutMapping
-    public Usuario actualizarLibro(@RequestBody Usuario libro){
+    public Usuario actualizarUsuario(@RequestBody Usuario libro){
         return usuarioService.update(libro);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void eliminarLibro(@PathVariable Long id) {
+    public void eliminarUsuario(@PathVariable Long id) {
         usuarioService.delete(id);
     }
 }
