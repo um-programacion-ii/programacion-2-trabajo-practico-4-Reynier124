@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface LibroRepository {
     Libro save(Libro libro);
+    Libro update(Libro libro);
     Optional<Libro> findById(Long id);
     Optional<Libro> findByIsbn(String isbn);
     List<Libro> findAll();

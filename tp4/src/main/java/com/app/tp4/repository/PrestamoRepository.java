@@ -9,6 +9,7 @@ import java.util.Optional;
 
 public interface PrestamoRepository {
     Prestamo save(Prestamo prestamo);
+    Prestamo update(Prestamo prestamo);
     Optional<Prestamo> findById(Long id);
     Optional<Prestamo> findByLibro(Libro libro);
     Optional<Prestamo> findByUsuario(Usuario usuario);
