@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Prestamo {
-    private long id;
+    private Long id;
     private Libro libro;
     private Usuario usuario;
     private LocalDate fechaPrestamo;
