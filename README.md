@@ -462,6 +462,31 @@ class LibroServiceImplTest {
   - Ejemplos de uso
   - Documentación de endpoints
 
+## Instrucciones de instalación
+Esta es la guía paso a paso:
+- Posicionarse en una carpeta para poner el proyecto
+- Abir la terminal o git bash si estas en windows
+- Copiar los siguientes comandos:
+- git clone git@github.com:um-programacion-ii/programacion-2-trabajo-practico-4-Reynier124.git
+- cd cd programacion-2-trabajo-practico-4-Reynier124/
+- Abir en esa posición tu IDE o editor de codigo predilecto
+- Compilar si tu IDE no lo hace automáticamente
+- Ir en tp4/src/main/java/com/app/tp4/Tp4Application.java e iniciar la ejecución
+
+## Requisitos del sistema
+- Java Development Kit (JDK): 17 o superior
+- Maven: 3.8+
+- Mockito
+- JUnit 5
+- MockMvc
+
+## Documentación de endpoints
+Todos parten de "/api" y a partir de ahí tendrías los siguientes endpoints:
+- /libros
+- /usuarios
+- /prestamos
+
+
 ## 📚 Recursos Adicionales
 
 - [Documentación de Spring Boot](https://spring.io/projects/spring-boot)
@@ -531,6 +556,9 @@ El uso de Inteligencia Artificial (IA) en este trabajo práctico debe seguir las
    - La IA puede usarse para facilitar el aprendizaje
    - Documentar el proceso de desarrollo
    - Mantener un registro del progreso
+
+## Uso de la IA de parte del Estudiante
+Se utilizó IA en la Etapa 4, especialmente de los test de integración de la capa controller
 
 ## 📝 Licencia
 
