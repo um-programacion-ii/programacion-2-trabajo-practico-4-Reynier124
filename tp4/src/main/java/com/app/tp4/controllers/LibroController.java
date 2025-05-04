@@ -4,6 +4,7 @@ import com.app.tp4.model.Libro;
 import com.app.tp4.services.LibroService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -23,12 +24,20 @@ public class LibroController {
 
     @GetMapping("/{id}")
     public Libro obtenerPorId(@PathVariable Long id) {
-        return libroService.buscarPorId(id);
+        Libro libro = libroService.buscarPorId(id);
+        if (libro == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Libro no encontrado");
+        }
+        return libro;
     }
 
     @GetMapping("/isbn/{isbn}")
     public Libro obtenerPorIsbn(@PathVariable String isbn) {
-        return libroService.buscarPorIsbn(isbn);
+        Libro libro = libroService.buscarPorIsbn(isbn);
+        if (libro == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Libro no encontrado");
+        }
+        return libro;
     }
 
     @PostMapping

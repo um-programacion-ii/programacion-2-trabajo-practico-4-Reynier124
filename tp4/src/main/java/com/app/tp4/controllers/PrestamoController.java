@@ -6,6 +6,7 @@ import com.app.tp4.model.Usuario;
 import com.app.tp4.services.PrestamoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 @RestController
@@ -24,17 +25,29 @@ public class PrestamoController {
 
     @GetMapping("/{id}")
     public Prestamo obtenerPorId(@PathVariable Long id) {
-        return prestamoService.buscarPorId(id);
+        Prestamo prestamo = prestamoService.buscarPorId(id);
+        if (prestamo == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Prestamo no encontrado");
+        }
+        return prestamo;
     }
 
     @GetMapping("/usuario")
     public Prestamo obtenerPorUsuario(@RequestBody Usuario usuario) {
-        return prestamoService.buscarPorUsuario(usuario);
+        Prestamo prestamo = prestamoService.buscarPorUsuario(usuario);
+        if (prestamo == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Prestamo no encontrado");
+        }
+        return prestamo;
     }
 
     @GetMapping("/libro")
     public Prestamo obtenerPorLibro(@RequestBody Libro libro) {
-        return prestamoService.buscarPorLibro(libro);
+        Prestamo prestamo = prestamoService.buscarPorLibro(libro);
+        if (prestamo == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Prestamo no encontrado");
+        }
+        return prestamo;
     }
 
     @PostMapping
